@@ -44,7 +44,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres://localhost/coderdjango",
+        default="postgres://upeccrug:56jcyDkBIzE6f5cSJFX5Tn58jhSqyRr5@ruby.db.elephantsql.com/upeccrug",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
