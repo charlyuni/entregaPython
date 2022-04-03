@@ -44,7 +44,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 DATABASES = {
     "default": env.db(
         "DATABASE_URL",
-        default="postgres://upeccrug:56jcyDkBIzE6f5cSJFX5Tn58jhSqyRr5@ruby.db.elephantsql.com/upeccrug",
+        default="postgres://upeccrug:yaDmvNqt-x01gA5KL2Dkofbo3Kg_1yat@ruby.db.elephantsql.com/upeccrug",
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -85,6 +85,8 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "coderdjango.users",
+    "coderdjango.students",
+    "coderdjango.family"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
