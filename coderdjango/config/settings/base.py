@@ -86,7 +86,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "coderdjango.users",
     "coderdjango.students",
-    "coderdjango.family"
+    "coderdjango.family",
+    "coderdjango.template_ecommerce",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
