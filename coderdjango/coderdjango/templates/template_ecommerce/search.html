@@ -1,0 +1,39 @@
+{% extends 'template_ecommerce/base.html'%}
+{% load static%}
+
+{% block content%}
+
+<div class="formSearch mt-5 ml-5 mb-5">
+    <form action='/template_ecommerce/search/' method='POST'>
+        {% csrf_token %}
+        <h2 class="tituloBusqueda"> Ingrese la categoria del producto a buscar: </h2>
+        <input type='text' name="Categoria" >
+        <input type="submit" class="btn-primary" value="Enviar">
+    </form>
+
+
+    {% if elements%}
+    <h2 class="tituloBusqueda mt-5"> Resultados </h2>
+    <div class="carrito">
+        
+        {% for element in elements %}
+    
+       
+            <div class="card mt-2 p-3">
+            <img class="card-img-top " src= "{{ STATIC_URL}}{{element.imagen}}" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Nombre: {{ element.name }}  </h4>
+                        <p class="card-text">Descripcion: {{element.descripcion}}</p>
+                        <h5 class="card-text mt-2">$ {{element.precio}}</h5>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            
+        {% endfor %}
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

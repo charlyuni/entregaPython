@@ -310,5 +310,8 @@ SPECTACULAR_SETTINGS = {
         {"url": "https://example.com", "description": "Production server"},
     ],
 }
+
+
+
 # Your stuff...
 # ------------------------------------------------------------------------------

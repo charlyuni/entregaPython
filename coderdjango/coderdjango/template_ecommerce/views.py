@@ -4,14 +4,11 @@ from django import template
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from flask import request
-from .models import formulario
-from .form import ContactoForm
-
+from .models import formulario, producto, Carrito
 
 
 class FormularioView(TemplateView):
     template_name = 'template_ecommerce/form.html'
-
     def post(self, request):
         name = request.POST['name'] 
         lasname = request.POST['lasname'] 
@@ -20,17 +17,25 @@ class FormularioView(TemplateView):
         messege = request.POST['messege'] 
 
 
-      
-
         obj_curso = formulario(name=name, lasname=lasname, email_client=email, phone=phone, messege=messege)
         obj_curso.save() 
 
         return render(request, self.template_name)
 
+class SearchView(TemplateView):
+    template_name = 'template_ecommerce/search.html'
+
+    def post(self, request):
+
+        print(request.POST.get('Categoria'))
+        context = {
+            "elements": producto.objects.filter(
+                categoria__icontains=request.POST.get('Categoria')
+            )
+        }
 
 
-
-
+        return render(request, self.template_name, context)
 
 
 
